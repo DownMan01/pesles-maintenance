@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/freeimage",
+      "destination": "https://freeimage.host/api/1/upload"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
