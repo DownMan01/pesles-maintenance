@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pesles Facebook Faceless Mastery Portal is currently undergoing unexpected maintenance." />
+    <meta name="theme-color" content="#050608" />
+    <title>Unexpected Maintenance | Pesles</title>
+    <link rel="icon" type="image/png" href="/pesles_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+      :root {
+        --bg: #050608;
+        --panel: rgba(18, 18, 22, 0.45);
+        --panel-2: rgba(26, 26, 32, 0.55);
+        --line: rgba(255, 255, 255, 0.08);
+        --text: #f5f7fb;
+        --muted: #98a3b6;
+        --green: #2be29b;
+        --green-soft: rgba(43, 226, 155, 0.12);
+        --shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg);
+        font-family: "DM Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Animated Ambient Background Glows */
+      .ambient-glows {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .glow-1 {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(43, 226, 155, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+        top: -100px;
+        right: -100px;
+        animation: float1 15s ease-in-out infinite alternate;
+      }
+
+      .glow-2 {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(98, 196, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+        bottom: -150px;
+        left: -150px;
+        animation: float2 18s ease-in-out infinite alternate;
+      }
+
+      @keyframes float1 {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(-80px, 80px) scale(1.1); }
+      }
+
+      @keyframes float2 {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(100px, -60px) scale(1.05); }
+      }
+
+      /* Tech grid overlay */
+      .grid-overlay {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      /* Center Container */
+      .content-wrapper {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 480px;
+        padding: 24px;
+        animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Glassmorphic Panel Card */
+      .maintenance-card {
+        background: var(--panel-2);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 40px 32px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        position: relative;
+      }
+
+      .card-glow {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        right: 20%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(43, 226, 155, 0.4), transparent);
+      }
+
+      /* Branding Logo */
+      .brand-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--green);
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 0 20px rgba(43, 226, 155, 0.3);
+      }
+
+      .logo-icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
+      .brand-name {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: var(--text);
+        margin: 0;
+      }
+
+      /* Animated Status Badge */
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--green-soft);
+        border: 1px solid rgba(43, 226, 155, 0.2);
+        border-radius: 100px;
+        padding: 6px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--green);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .pulse-dot {
+        --pulse-color: var(--green);
+        width: 8px;
+        height: 8px;
+        background-color: var(--pulse-color);
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .pulse-dot::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 2px solid var(--pulse-color);
+        animation: pulse 1.6s ease-in-out infinite;
+        opacity: 0;
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(0.6); opacity: 0.8; }
+        100% { transform: scale(1.8); opacity: 0; }
+      }
+
+      /* Text Elements */
+      .title {
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+        margin: 0;
+        color: var(--text);
+      }
+
+      .description {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      /* Separator Line */
+      .separator {
+        width: 100%;
+        height: 1px;
+        background: var(--line);
+      }
+
+      /* Footer Details */
+      .footer-info {
+        font-size: 13px;
+        color: var(--muted);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .support-link {
+        color: var(--green);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .support-link:hover {
+        color: #18c383;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating particles canvas background -->
+    <canvas id="dotCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3;"></canvas>
+
+    <!-- Animated Glow Layer -->
+    <div class="ambient-glows" style="z-index: 1;">
+      <div class="glow-1"></div>
+      <div class="glow-2"></div>
+    </div>
+
+    <!-- Tech Grid Overlay -->
+    <div class="grid-overlay" style="z-index: 2;"></div>
+
+    <div class="content-wrapper">
+      <div class="maintenance-card">
+        <div class="card-glow"></div>
+        
+        <!-- Branding -->
+        <div class="brand-header">
+          <div class="logo-icon">
+            <img src="/pesles_logo.png" alt="Pesles Symbol" />
+          </div>
+          <h1 class="brand-name">PESLES</h1>
+        </div>
+
+        <!-- Status indicator -->
+        <div class="status-badge" style="background: rgba(242, 189, 92, 0.12); border-color: rgba(242, 189, 92, 0.2); color: var(--gold);">
+          <span class="pulse-dot" style="--pulse-color: var(--gold);"></span>
+          Unexpected Maintenance
+        </div>
+
+        <!-- Text details -->
+        <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+          <h2 class="title">Upgrading Your Portal Experience</h2>
+          <p class="description">
+            We are currently upgrading the server. We will be back online shortly with a faster, optimized learning environment.
+          </p>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Support Info -->
+        <div class="footer-info">
+          <span>Need assistance during the upgrade?</span>
+          <span>Contact Support via Discord or email <a href="mailto:noreply@pesles.com" class="support-link">noreply@pesles.com</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas Floating Dots Animation Script -->
+    <script>
+      (function() {
+        const canvas = document.getElementById("dotCanvas");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        window.addEventListener("resize", function() {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        const maxParticles = 40;
+
+        for (let i = 0; i < maxParticles; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            size: Math.random() * 1.5 + 0.5,
+            speedY: -(Math.random() * 0.4 + 0.1),
+            opacity: Math.random() * 0.25 + 0.05,
+            fadeDirection: Math.random() > 0.5 ? 0.002 : -0.002
+          });
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, width, height);
+
+          for (let i = 0; i < particles.length; i++) {
+            let p = particles[i];
+            p.y += p.speedY;
+            p.opacity += p.fadeDirection;
+
+            if (p.opacity > 0.35 || p.opacity < 0.03) {
+              p.fadeDirection = -p.fadeDirection;
+            }
+
+            if (p.y < -10) {
+              p.y = height + 10;
+              p.x = Math.random() * width;
+              p.opacity = Math.random() * 0.25 + 0.05;
+            }
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(255, 255, 255, " + Math.max(0, p.opacity) + ")";
+            ctx.fill();
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      })();
+    </script>
+  </body>
+</html>
